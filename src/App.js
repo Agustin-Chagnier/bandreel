@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './Header';
+import Header from './components/Header';
+// import EventCarousel from './components/EventCarousel';
 // import Home from './Home';
 // import Search from './Search';
 // import Calendar from './Calendar';
@@ -22,6 +23,7 @@ const App = () => {
           <Route component={NotFound} />
         </Switch> */}
       </div>
+
     </BrowserRouter>
   );
 };
