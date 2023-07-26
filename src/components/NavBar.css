@@ -1,0 +1,33 @@
+/* navbar.css */
+
+.navbar {
+    background-color: navy; /* Fondo azul marino oscuro */
+    color: white; /* Texto en color blanco */
+    padding: 20px;
+    display: flex; /* Orientación vertical */
+    flex-direction: column; /* Orientación vertical */
+    align-items: center; /* Centrar elementos horizontalmente */
+  }
+  
+  .navbar h1 {
+    margin-bottom: 20px; /* Espacio entre el título y los botones */
+  }
+  
+  .navbar-buttons {
+    display: flex; /* Coloca los botones en una fila */
+    flex-direction: column; /* Orientación vertical */
+    align-items: center; /* Centrar elementos horizontalmente */
+  }
+  
+  .navbar-buttons button {
+    margin-bottom: 10px; /* Espacio entre los botones */
+  }
+  
+  /* Estilos para el botón drop-down */
+  .dropdown-menu {
+    background-color: navy; /* Fondo azul marino oscuro */
+    color: white; /* Texto en color blanco */
+    right: 0; /* Ajusta la posición a la derecha */
+    left: auto; /* Deshabilita la posición a la izquierda */
+  }
+  

@@ -1,21 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
+import './NavBar.css';
 
 const Navbar = ({ links }) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const closeDropdown = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <div className="navbar">
       <h1>LocalSound</h1>
       <div className="navbar-buttons">
         <button className="publish-button">Publicar</button>
-        <div className="dropdown">
-          <button className="dropbtn">Menú</button>
-          <div className="dropdown-content">
+        <Dropdown
+          show={showDropdown}
+          onToggle={toggleDropdown}
+          drop="left" // Añadimos la propiedad drop con valor "left"
+        >
+          <Dropdown.Toggle
+            variant="secondary"
+            id="dropdown-basic"
+            onClick={toggleDropdown}
+          >
+            Menú
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
             {links.map((link) => (
-              <a key={link.id} href={link.href}>
+              <Dropdown.Item
+                key={link.id}
+                href={link.href}
+                onClick={closeDropdown}
+              >
                 {link.name}
-              </a>
+              </Dropdown.Item>
             ))}
-          </div>
-        </div>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </div>
   );
