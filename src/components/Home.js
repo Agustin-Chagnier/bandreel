@@ -8,7 +8,8 @@ const Home = () => {
     return (
         <h2>
             soy home
-            <EventCarousel/>
+            
+            <EventCarousel />
 
 
         </h2>

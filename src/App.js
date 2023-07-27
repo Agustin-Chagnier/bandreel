@@ -1,14 +1,12 @@
 import React from 'react';
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import EventCalendar from './components/EventCalendar';
-// import EventCarousel from './components/EventCarousel';
 import Home from './components/Home';
-// import Search from './Search';
-// import Calendar from './Calendar';
-// import Recommendations from './Recommendations';
-// import UserProfile from './UserProfile';
-// import NotFound from './NotFound';
+import Search from './components/Search';
+import Recommendations from './components/Recommendations';
+import UserProfile from './components/UserProfile';
+import NotFound from './components/NotFound';
 
 const App = () => {
 
@@ -23,23 +21,23 @@ const App = () => {
 
 
   return (
-    
-    
+
+
     <BrowserRouter>
         <NavBar links={links}/>
-      
+
         <Routes>
-          <Route exact path="/" component={Home} /> 
-          {/* <Route path="/buscar" component={Search} /> */}
-          <Route path="./components/calendario" component={EventCalendar} />
-          {/* <Route path="/recomendaciones" component={Recommendations} />
-          <Route path="/perfil" component={UserProfile} />
-          <Route component={NotFound} /> */}
+          <Route exact path="/" element={<Home />} />
+          <Route path="/buscar" element={<Search />} />
+          <Route path="/calendario" element={<EventCalendar />} />
+          <Route path="/recomendaciones" element={<Recommendations />} />
+          <Route path="/perfil" element={<UserProfile />} />
+          <Route element={<NotFound />} />
         </Routes>
-      
+
 
     </BrowserRouter>
-    
+
   );
 };
 
