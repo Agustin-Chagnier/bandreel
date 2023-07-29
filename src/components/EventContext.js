@@ -1,14 +1,8 @@
-import React, { createContext, useState, useContext } from 'react';
+  import React, { createContext, useState, useContext } from 'react';
 
 const EventContext = createContext();
 
-export const { Provider } = EventContext
-
-export const useEventContext = () => {
-
-    return useContext(EventContext)
-}
-
+// export const { Provider } = EventContext
 
 
 const EventProvider = ({ children }) => {
@@ -25,6 +19,11 @@ const EventProvider = ({ children }) => {
       {children}
     </EventContext.Provider>
   );
+};
+
+export const useEventContext = () => {
+
+  return useContext(EventContext)
 };
 
 export default EventProvider;

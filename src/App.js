@@ -7,6 +7,7 @@ import Search from './components/Search';
 import Recommendations from './components/Recommendations';
 import UserProfile from './components/UserProfile';
 import NotFound from './components/NotFound';
+import EventProvider from './components/EventContext';
 
 const App = () => {
 
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
 
-
+<EventProvider>
     <BrowserRouter>
         <NavBar links={links}/>
 
@@ -37,6 +38,7 @@ const App = () => {
 
 
     </BrowserRouter>
+</EventProvider>
 
   );
 };
