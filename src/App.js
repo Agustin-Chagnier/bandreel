@@ -8,6 +8,11 @@ import Recommendations from './components/Recommendations';
 import UserProfile from './components/UserProfile';
 import NotFound from './components/NotFound';
 import EventProvider from './components/EventContext';
+import { UserProvider } from './components/UserContext';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+
+
 
 const App = () => {
 
@@ -17,17 +22,22 @@ const App = () => {
     { id: 3, name: 'Calendario', href: '/calendario' },
     { id: 4, name: 'Recomendaciones', href: '/recomendaciones' },
     { id: 5, name: 'Perfil', href: '/perfil' },
+    { id: 6, name: 'Iniciar sesión', href: '/login' },
+    { id: 7, name: 'Registrarse', href: '/signup' },
   ];
 
 
 
   return (
-
+<UserProvider>
 <EventProvider>
     <BrowserRouter>
         <NavBar links={links}/>
 
         <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route exact path="/" element={<Home />} />
           <Route path="/buscar" element={<Search />} />
           <Route path="/calendario" element={<EventCalendar />} />
@@ -39,6 +49,7 @@ const App = () => {
 
     </BrowserRouter>
 </EventProvider>
+</UserProvider>
 
   );
 };
