@@ -11,6 +11,8 @@ import EventProvider from './components/EventContext';
 import { UserProvider } from './components/UserContext';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import ProtectedRoute from './components/ProtectedRoute';
+
 
 
 
